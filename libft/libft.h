@@ -6,7 +6,7 @@
 /*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 10:16:07 by jschreye          #+#    #+#             */
-/*   Updated: 2021/10/22 11:12:55 by jschreye         ###   ########.fr       */
+/*   Updated: 2021/12/22 10:17:10 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -51,5 +51,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
+void		ft_putnbr(int nb);
+void		ft_putstr(char *str);
 
 #endif

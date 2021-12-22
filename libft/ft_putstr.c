@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr++.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 08:59:50 by jschreye          #+#    #+#             */
-/*   Updated: 2021/11/16 16:01:21 by jschreye         ###   ########.fr       */
+/*   Created: 2021/12/22 10:12:26 by jschreye          #+#    #+#             */
+/*   Updated: 2021/12/22 10:20:39 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-unsigned int	ft_putnbrnbr(unsigned int nb, int c)
+static char	ft_putchar(char c)
 {
-	if (nb >= 10)
-	{
-		c = ft_putnbrnbr(nb / 10, c + 1);
-		ft_putnbrnbr(nb % 10, 0);
-	}
-	else
-		c = ft_putchar(nb + '0', c);
+	write(1, &c, 1);
 	return (c);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		write (1, "(null)", 6);
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
